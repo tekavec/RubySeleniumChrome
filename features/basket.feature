@@ -5,6 +5,7 @@ Feature: Amazon basket
 
   Scenario: Add the cheapest product to basket
     Given I visit Amazon homepage
-    And I search for the "iPhone 6"
-    When I add the cheapest "iPhone 6" smartphone to the basket
-    Then the basket should contain  smartphone
+    And I search for the "iPhone 6" smartphone
+    And I select the cheapest product among results found
+    When I add the selected product to the basket
+    Then the basket should contain the product added
